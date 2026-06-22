@@ -6,7 +6,14 @@ The landing page and runnable demos for **[SAIHM](https://saihm.coti.global)** �
 
 ## Demos
 
-- **[demo-cross-model-memory](https://github.com/citw2/demo-cross-model-memory)** — one encrypted memory shared across **Claude, DeepSeek, Qwen, Kimi, GLM, GPT**, plus provable crypto-shred erasure. Runs fully offline (zero signup) against an included blind sandbox, or live against the hosted endpoint.
+One repo per model — each runs fully offline against an included blind sandbox (no account needed to try it), or live against the hosted endpoint with one environment variable:
+
+- **[demo-claude](https://github.com/citw2/demo-claude)** · **[demo-openai](https://github.com/citw2/demo-openai)** · **[demo-deepseek](https://github.com/citw2/demo-deepseek)** · **[demo-qwen](https://github.com/citw2/demo-qwen)** · **[demo-kimi](https://github.com/citw2/demo-kimi)** · **[demo-glm](https://github.com/citw2/demo-glm)**
+
+And two that show the whole point — one memory, many surfaces:
+
+- **[demo-cross-model-memory](https://github.com/citw2/demo-cross-model-memory)** — one encrypted memory shared across **Claude, DeepSeek, Qwen, Kimi, GLM, GPT**, plus provable crypto-shred erasure.
+- **[demo-claude-code](https://github.com/citw2/demo-claude-code)** — SAIHM as an MCP server for Claude Code, Cursor, and any MCP host.
 
 ## Built on
 

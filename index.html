@@ -118,7 +118,8 @@ Medically: nothing remembered.     Medically: nothing remembered.</pre>
       <tr><td>Portable across models — one live store, not a lossy manual import</td><td class="c no">✗</td><td class="c yes">✓</td></tr>
       <tr><td>Cryptographically provable erasure (crypto-shred, GDPR Art. 17)</td><td class="c no">✗</td><td class="c yes">✓</td></tr>
       <tr><td>Shareable to other agents, end-to-end authenticated</td><td class="c no">✗</td><td class="c yes">✓</td></tr>
-      <tr><td>Operator can't read your memory (blind / non-custodial)</td><td class="c no">✗</td><td class="c yes">✓</td></tr>
+      <tr><td>Operator holds no key — non-custodial, not just encrypted at rest</td><td class="c no">✗</td><td class="c yes">✓</td></tr>
+      <tr><td>Tamper-evident — each cell's integrity is anchored on-chain (live service)</td><td class="c no">✗</td><td class="c yes">✓</td></tr>
       <tr><td>Post-quantum cryptography (ML-DSA-65 / ML-KEM-768)</td><td class="c no">✗</td><td class="c yes">✓</td></tr>
     </table>
   </div>
@@ -141,23 +142,29 @@ Medically: nothing remembered.     Medically: nothing remembered.</pre>
 
 <section id="models">
   <div class="wrap">
-    <h2>Test it across the models you use</h2>
-    <p class="lead">The same demo runs against any two models side by side. Each line is copy-paste; bring your own key, or run the offline mock with none.</p>
+    <h2>Pick your model — one repo each, runnable in a minute</h2>
+    <p class="lead">A dedicated demo for each model. Every one runs offline against an included sandbox — no account needed to try it — or grounds a live answer with your own key. The memory is identical — that's the point: it's portable across all of them.</p>
     <div class="grid cards">
-      <div class="card"><h3>Claude + DeepSeek</h3><p class="pain">Default. Anthropic + an OpenAI-compatible endpoint, grounded from one store.</p>
-        <div class="snip"><pre>node demo.mjs</pre><button>Copy</button></div></div>
-      <div class="card"><h3>Qwen</h3><p class="pain">Alibaba's Qwen — native chat memory stays inside the vendor, not portable.</p>
-        <div class="snip"><pre>MODEL_A=qwen MODEL_B=claude node demo.mjs</pre><button>Copy</button></div></div>
-      <div class="card"><h3>Kimi</h3><p class="pain">Moonshot's Kimi — chat memory stays inside the vendor, not portable across models.</p>
-        <div class="snip"><pre>MODEL_A=kimi MODEL_B=deepseek node demo.mjs</pre><button>Copy</button></div></div>
-      <div class="card"><h3>GLM</h3><p class="pain">Zhipu's GLM — memory can't be carried to another model.</p>
-        <div class="snip"><pre>MODEL_A=glm MODEL_B=qwen node demo.mjs</pre><button>Copy</button></div></div>
-      <div class="card"><h3>GPT</h3><p class="pain">OpenAI's memory is siloed in your OpenAI account — not a portable store you control.</p>
-        <div class="snip"><pre>MODEL_A=openai MODEL_B=claude node demo.mjs</pre><button>Copy</button></div></div>
-      <div class="card"><h3>Any OpenAI-compatible model</h3><p class="pain">DeepSeek, Qwen, Kimi, GLM, GPT — SAIHM reaches them all through one path.</p>
-        <div class="snip"><pre>SAIHM_QWEN_MODEL=qwen2.5-72b-instruct \
-MODEL_A=qwen MODEL_B=kimi node demo.mjs</pre><button>Copy</button></div></div>
+      <div class="card"><h3>Claude · <a href="https://github.com/citw2/demo-claude">demo-claude →</a></h3><p class="pain">Ground Claude in a memory you own, then carry the same store to every other model.</p>
+        <div class="snip"><pre>git clone https://github.com/citw2/demo-claude
+cd demo-claude &amp;&amp; npm install &amp;&amp; node demo.mjs</pre><button>Copy</button></div></div>
+      <div class="card"><h3>GPT · <a href="https://github.com/citw2/demo-openai">demo-openai →</a></h3><p class="pain">A memory layer GPT can read — one you hold the keys to, not your OpenAI account.</p>
+        <div class="snip"><pre>git clone https://github.com/citw2/demo-openai
+cd demo-openai &amp;&amp; npm install &amp;&amp; node demo.mjs</pre><button>Copy</button></div></div>
+      <div class="card"><h3>DeepSeek · <a href="https://github.com/citw2/demo-deepseek">demo-deepseek →</a></h3><p class="pain">Seal three facts client-side, ground DeepSeek in them, then prove you can erase one.</p>
+        <div class="snip"><pre>git clone https://github.com/citw2/demo-deepseek
+cd demo-deepseek &amp;&amp; npm install &amp;&amp; node demo.mjs</pre><button>Copy</button></div></div>
+      <div class="card"><h3>Qwen · <a href="https://github.com/citw2/demo-qwen">demo-qwen →</a></h3><p class="pain">Give Qwen a memory that doesn't stay locked to one vendor's account.</p>
+        <div class="snip"><pre>git clone https://github.com/citw2/demo-qwen
+cd demo-qwen &amp;&amp; npm install &amp;&amp; node demo.mjs</pre><button>Copy</button></div></div>
+      <div class="card"><h3>Kimi · <a href="https://github.com/citw2/demo-kimi">demo-kimi →</a></h3><p class="pain">Wire Moonshot's Kimi to a portable, provably erasable store you control.</p>
+        <div class="snip"><pre>git clone https://github.com/citw2/demo-kimi
+cd demo-kimi &amp;&amp; npm install &amp;&amp; node demo.mjs</pre><button>Copy</button></div></div>
+      <div class="card"><h3>GLM · <a href="https://github.com/citw2/demo-glm">demo-glm →</a></h3><p class="pain">Ground Zhipu's GLM in one memory, then carry it to Claude, GPT, or any model.</p>
+        <div class="snip"><pre>git clone https://github.com/citw2/demo-glm
+cd demo-glm &amp;&amp; npm install &amp;&amp; node demo.mjs</pre><button>Copy</button></div></div>
     </div>
+    <p class="lead" style="margin-top:20px">Want them side by side? <a href="https://github.com/citw2/demo-cross-model-memory"><b>demo-cross-model-memory</b></a> grounds two models from the same store at once.</p>
   </div>
 </section>
 
@@ -166,7 +173,7 @@ MODEL_A=qwen MODEL_B=kimi node demo.mjs</pre><button>Copy</button></div></div>
     <h2>How it works</h2>
     <div class="grid steps">
       <div class="step"><b>1 · Seal on the client</b><p>Your master secret derives a post-quantum identity and a key-encryption key. Every cell is signed (ML-DSA-65) and encrypted (AES-256-GCM) before it leaves your process.</p></div>
-      <div class="step"><b>2 · Store blind</b><p>Only opaque ciphertext is sent. The endpoint stores, anchors, and meters it without ever holding a key — it cannot read your memory.</p></div>
+      <div class="step"><b>2 · Store blind</b><p>Only opaque ciphertext is sent. The endpoint stores it, anchors each cell's integrity on-chain, and meters usage — all without ever holding a key, so it cannot read your memory.</p></div>
       <div class="step"><b>3 · Crypto-shred to forget</b><p><code>forget</code> destroys the wrapped key. The ciphertext becomes unrecoverable noise — erasure you can prove, for every model at once.</p></div>
     </div>
   </div>
@@ -179,7 +186,7 @@ MODEL_A=qwen MODEL_B=kimi node demo.mjs</pre><button>Copy</button></div></div>
 <pre>git clone https://github.com/citw2/demo-cross-model-memory
 cd demo-cross-model-memory
 npm install
-node demo.mjs            # runs offline, zero signup</pre><button>Copy</button></div>
+node demo.mjs            # offline sandbox, no account</pre><button>Copy</button></div>
     <p class="lead" style="margin-top:22px">Prefer it inside your editor? <a href="https://github.com/citw2/demo-claude-code"><b>demo-claude-code</b></a> runs SAIHM as an MCP server for Claude Code, Cursor, and any MCP host.</p>
     <p class="lead">Ready for durable, hosted, blind memory across all your agents? <a href="https://saihm.coti.global/join"><b>Join SAIHM</b></a> and point the same demo at the live endpoint.</p>
     <p class="note">The local sandbox is an offline stand-in so you can try the protocol with no account; it is not the SAIHM service. Going live requires a paid membership.</p>
@@ -201,6 +208,14 @@ node demo.mjs            # runs offline, zero signup</pre><button>Copy</button><
 <footer>
   <div class="wrap">
     <strong>Build on SAIHM</strong>
+    <div class="links">
+      <a href="https://github.com/citw2/demo-claude">demo-claude</a>
+      <a href="https://github.com/citw2/demo-openai">demo-openai</a>
+      <a href="https://github.com/citw2/demo-deepseek">demo-deepseek</a>
+      <a href="https://github.com/citw2/demo-qwen">demo-qwen</a>
+      <a href="https://github.com/citw2/demo-kimi">demo-kimi</a>
+      <a href="https://github.com/citw2/demo-glm">demo-glm</a>
+    </div>
     <div class="links">
       <a href="https://github.com/citw2/demo-cross-model-memory">Cross-model demo</a>
       <a href="https://github.com/citw2/demo-claude-code">Claude Code / Cursor demo</a>
