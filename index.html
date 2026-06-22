@@ -115,9 +115,8 @@ Medically: nothing remembered.     Medically: nothing remembered.</pre>
     <p class="lead">Per-vendor memory locks your context inside one model's account. SAIHM is a layer you own — portable, provably erasable, and shareable between agents.</p>
     <table class="matrix">
       <tr><th>Capability</th><th>Built-in model memory</th><th>SAIHM</th></tr>
-      <tr><td>Persists across sessions</td><td class="c"><span class="yes">partial</span></td><td class="c yes">✓</td></tr>
       <tr><td>Portable across models (Claude ↔ DeepSeek ↔ …)</td><td class="c no">✗</td><td class="c yes">✓</td></tr>
-      <tr><td>Provable erasure (GDPR Art. 17, crypto-shred)</td><td class="c no">✗</td><td class="c yes">✓</td></tr>
+      <tr><td>Cryptographically provable erasure (crypto-shred, GDPR Art. 17)</td><td class="c no">✗</td><td class="c yes">✓</td></tr>
       <tr><td>Shareable to other agents, end-to-end authenticated</td><td class="c no">✗</td><td class="c yes">✓</td></tr>
       <tr><td>Operator can't read your memory (blind / non-custodial)</td><td class="c no">✗</td><td class="c yes">✓</td></tr>
       <tr><td>Post-quantum cryptography (ML-DSA-65 / ML-KEM-768)</td><td class="c no">✗</td><td class="c yes">✓</td></tr>
@@ -149,11 +148,11 @@ Medically: nothing remembered.     Medically: nothing remembered.</pre>
         <div class="snip"><pre>node demo.mjs</pre><button>Copy</button></div></div>
       <div class="card"><h3>Qwen</h3><p class="pain">Alibaba's Qwen — native chat memory stays inside the vendor, not portable.</p>
         <div class="snip"><pre>MODEL_A=qwen MODEL_B=claude node demo.mjs</pre><button>Copy</button></div></div>
-      <div class="card"><h3>Kimi</h3><p class="pain">Moonshot's Kimi — no built-in way to prove a memory was deleted.</p>
+      <div class="card"><h3>Kimi</h3><p class="pain">Moonshot's Kimi — chat memory stays inside the vendor, not portable across models.</p>
         <div class="snip"><pre>MODEL_A=kimi MODEL_B=deepseek node demo.mjs</pre><button>Copy</button></div></div>
       <div class="card"><h3>GLM</h3><p class="pain">Zhipu's GLM — memory can't be carried to another model.</p>
         <div class="snip"><pre>MODEL_A=glm MODEL_B=qwen node demo.mjs</pre><button>Copy</button></div></div>
-      <div class="card"><h3>GPT</h3><p class="pain">OpenAI memory is account-siloed; not user-erasable on demand by key.</p>
+      <div class="card"><h3>GPT</h3><p class="pain">OpenAI's memory is siloed in your OpenAI account — not a portable store you control.</p>
         <div class="snip"><pre>MODEL_A=openai MODEL_B=claude node demo.mjs</pre><button>Copy</button></div></div>
       <div class="card"><h3>Any OpenAI-compatible model</h3><p class="pain">DeepSeek, Qwen, Kimi, GLM, GPT — SAIHM reaches them all through one path.</p>
         <div class="snip"><pre>SAIHM_QWEN_MODEL=qwen2.5-72b-instruct \
