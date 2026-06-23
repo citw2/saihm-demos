@@ -182,6 +182,19 @@ pip install -r requirements.txt &amp;&amp; python demo.py</pre><button>Copy</but
   </div>
 </section>
 
+<section id="benchmark">
+  <div class="wrap">
+    <h2>Measure the token savings yourself</h2>
+    <p class="lead">Re-sending an agent's whole history every turn is the dominant cost of long sessions. A small, offline, reproducible benchmark tokenizes a multi-session transcript two ways — full-history resend vs recalling a bounded set of memory cells — and reports the context-token reduction. It grows with session length: about 79% at ten turns, ~86% by eighteen. No API calls, no cost.</p>
+    <div class="snip" style="max-width:680px">
+<pre>git clone https://github.com/citw2/saihm-token-benchmark
+cd saihm-token-benchmark
+npm install
+node benchmark.mjs                            # offline; tokenizes with gpt-tokenizer
+node benchmark.mjs --file your-session.json   # run it on your own transcript</pre><button>Copy</button></div>
+  </div>
+</section>
+
 <section id="how">
   <div class="wrap">
     <h2>How it works</h2>
@@ -234,6 +247,7 @@ node demo.mjs            # offline sandbox, no account</pre><button>Copy</button
       <a href="https://github.com/citw2/demo-cross-model-memory">Cross-model demo</a>
       <a href="https://github.com/citw2/demo-claude-code">Claude Code / Cursor demo</a>
       <a href="https://github.com/citw2/saihm-langchain">LangChain / LlamaIndex demo</a>
+      <a href="https://github.com/citw2/saihm-token-benchmark">Token benchmark</a>
       <a href="https://github.com/SAIHM-Admin/saihm-mcp-server-pro">@saihm/mcp-server-pro</a>
       <a href="https://github.com/SAIHM-Admin/saihm-client-pro">@saihm/client-pro</a>
       <a href="https://github.com/SAIHM-Admin/saihm-mcp">@saihm/mcp-server</a>
