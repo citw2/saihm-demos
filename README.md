@@ -10,10 +10,11 @@ One repo per model — each runs fully offline against an included blind sandbox
 
 - **[demo-claude](https://github.com/citw2/demo-claude)** · **[demo-openai](https://github.com/citw2/demo-openai)** · **[demo-deepseek](https://github.com/citw2/demo-deepseek)** · **[demo-qwen](https://github.com/citw2/demo-qwen)** · **[demo-kimi](https://github.com/citw2/demo-kimi)** · **[demo-glm](https://github.com/citw2/demo-glm)**
 
-And two that show the whole point — one memory, many surfaces:
+And three that show the whole point — one memory, many surfaces:
 
 - **[demo-cross-model-memory](https://github.com/citw2/demo-cross-model-memory)** — one encrypted memory shared across **Claude, DeepSeek, Qwen, Kimi, GLM, GPT**, plus provable crypto-shred erasure.
 - **[demo-claude-code](https://github.com/citw2/demo-claude-code)** — SAIHM as an MCP server for Claude Code, Cursor, and any MCP host.
+- **[saihm-langchain](https://github.com/citw2/saihm-langchain)** — SAIHM as a LangChain `BaseChatMessageHistory` and a LlamaIndex `BaseMemory` for Python; the same store opens from both.
 
 ## Built on
 
