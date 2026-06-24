@@ -171,7 +171,7 @@ cd demo-glm &amp;&amp; npm install &amp;&amp; node demo.mjs</pre><button>Copy</b
 <section id="frameworks">
   <div class="wrap">
     <h2>Building in Python? Drop it into your framework</h2>
-    <p class="lead">Drop-in adapters for LangChain, LlamaIndex, CrewAI, and AutoGen — the same store opens from all of them, sealed client-side, provably erasable, and Python never holds a key.</p>
+    <p class="lead">Drop-in adapters for LangChain, LlamaIndex, CrewAI, AutoGen, and LangGraph — the same store opens from all of them, sealed client-side, provably erasable, and Python never holds a key.</p>
     <div class="grid cards">
       <div class="card"><h3>LangChain &amp; LlamaIndex · <a href="https://github.com/citw2/saihm-langchain">saihm-langchain →</a></h3><p class="pain">Give any LangChain or LlamaIndex app a memory you own — one store, both frameworks, erasure you can prove.</p>
         <div class="snip"><pre>git clone https://github.com/citw2/saihm-langchain
@@ -186,6 +186,11 @@ pip install -r requirements.txt &amp;&amp; python demo.py</pre><button>Copy</but
       <div class="card"><h3>AutoGen · <a href="https://github.com/citw2/saihm-autogen">saihm-autogen →</a></h3><p class="pain">Give an AutoGen agent an <code>autogen_core</code> Memory you own — portable across models, erasure you can prove.</p>
         <div class="snip"><pre>git clone https://github.com/citw2/saihm-autogen
 cd saihm-autogen &amp;&amp; npm install
+python3 -m venv .venv &amp;&amp; . .venv/bin/activate
+pip install -r requirements.txt &amp;&amp; python demo.py</pre><button>Copy</button></div></div>
+      <div class="card"><h3>LangGraph · <a href="https://github.com/citw2/saihm-langgraph">saihm-langgraph →</a></h3><p class="pain">Long-term, cross-thread memory your graph owns — a <code>BaseStore</code> that's portable and provably erasable.</p>
+        <div class="snip"><pre>git clone https://github.com/citw2/saihm-langgraph
+cd saihm-langgraph &amp;&amp; npm install
 python3 -m venv .venv &amp;&amp; . .venv/bin/activate
 pip install -r requirements.txt &amp;&amp; python demo.py</pre><button>Copy</button></div></div>
     </div>
@@ -259,6 +264,7 @@ node demo.mjs            # offline sandbox, no account</pre><button>Copy</button
       <a href="https://github.com/citw2/saihm-langchain">LangChain / LlamaIndex demo</a>
       <a href="https://github.com/citw2/saihm-crewai">CrewAI memory</a>
       <a href="https://github.com/citw2/saihm-autogen">AutoGen memory</a>
+      <a href="https://github.com/citw2/saihm-langgraph">LangGraph store</a>
       <a href="https://github.com/citw2/saihm-token-benchmark">Token benchmark</a>
       <a href="https://github.com/SAIHM-Admin/saihm-mcp-server-pro">@saihm/mcp-server-pro</a>
       <a href="https://github.com/SAIHM-Admin/saihm-client-pro">@saihm/client-pro</a>
