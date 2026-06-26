@@ -24,6 +24,7 @@ And three that show the whole point — one memory, many surfaces:
 
 ## Learn more
 
+- [Token benchmark](https://github.com/citw2/saihm-token-benchmark) — recalling a bounded memory instead of resending the transcript cuts context tokens **62.8%–85.9%** across a multi-session task (offline, reproducible).
 - [AI memory needs a standard](https://saihm.coti.global/blog/2026-05-18-ai-memory-needs-a-standard)
 - [What makes SAIHM different](https://saihm.coti.global/blog/2026-05-31-what-makes-saihm-different)
 
